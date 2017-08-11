@@ -1,0 +1,117 @@
+{
+	"variables": [],
+	"info": {
+		"name": "jsonplaceholder.com",
+		"_postman_id": "34a8b034-6896-7b18-263f-f7a013294ff0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "deviceeventid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"tests[\"Response time is less than 200ms\"] = responseTime < 300;",
+							"",
+							"tests[\"Body matches string\"] = responseBody.has(\"development\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.us-east-1.mbedcloud.com/v3/devicelog/015dd2b5e4bc000000000001001002ba",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer rt_J4TTazBtqnD5XOUKvXfxIJOLY6m8VilFZOp8KJ9keQOyks0/IuEkbPy4b0Ytj2W7jWKOYBoALodBRDY3OHUFBNy2fwV/O0ErnuUx/JS3Zg/iTzyAAdHQNJots/1Wl9qYw4IN0DHpJ8mQdPgdtcFFH/YfMuGLIHldlA2gtY8xzbI",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Prodsingeldeviceinfo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"",
+							"",
+							"tests[\"Response time is less than 400ms\"] = responseTime < 400;",
+							"",
+							"tests[\"Body matches string\"] = responseBody.has(\"registered\");",
+							"",
+							"",
+							"",
+							"tests[\"Successful GET request\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Status code name has string\"] = responseCode.name.has(\"OK\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.us-east-1.mbedcloud.com/v3/devices/015dc862f3d90000000000010010034e",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer rt_J4TTazBtqnD5XOUKvXfxIJOLY6m8VilFZOp8KJ9keQOyks0/IuEkbPy4b0Ytj2W7jWKOYBoALodBRDY3OHUFBNy2fwV/O0ErnuUx/JS3Zg/iTzyAAdHQNJots/1Wl9qYw4IN0DHpJ8mQdPgdtcFFH/YfMuGLIHldlA2gtY8xzbI",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "account",
+							"value": "/",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "bird",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "Changepassword1!",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": "logininfo"
+			},
+			"response": []
+		}
+	]
+}
