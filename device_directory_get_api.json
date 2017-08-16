@@ -1,0 +1,233 @@
+{
+	"variables": [],
+	"info": {
+		"name": "device_directory_get_api",
+		"_postman_id": "34a8b034-6896-7b18-263f-f7a013294ff0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v3_deviceevents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"tests[\"Body matches string\"] = responseBody.has(\"development\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.us-east-1.mbedcloud.com/v3/device-events",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer ak_1MDE1ODk1YjIyMzJiMDI0MjBhMDExZTAzMDAwMDAwMDA015de776fc2302420a01450d00000000VE4bVF3BPkOACLWdGKKcts9aAeFoqmcg",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Authorization ",
+							"value": "Bearer rt_D+hus+CZJvMod6X4QLiw/y7QfysHrnP03Pk+KcNOqyZjjAAN14YeOeZcgaerD3gyhDqElNZPrFGRc8KqtGSk5tva1ctd+hWgbdxx2WLeSLQ16pgPskXoVrpMw0VkmOiFCOHHn3Y25Fn9O/04N3IM08G5sBmPv5ktj+189pd5XRI",
+							"type": "text",
+							"enabled": false
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text",
+							"enabled": false
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "v3_devicelog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body matches string\"] = responseBody.has(\"registered\");",
+							"",
+							"tests[\"Successful GET request\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Status code name has string\"] = responseCode.name.has(\"OK\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.us-east-1.mbedcloud.com/v3/devicelog",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer ak_1MDE1ODk1YjIyMzJiMDI0MjBhMDExZTAzMDAwMDAwMDA015de776fc2302420a01450d00000000VE4bVF3BPkOACLWdGKKcts9aAeFoqmcg",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "account",
+							"value": "/",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "bird",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "Changepassword1!",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": "logininfo"
+			},
+			"response": []
+		},
+		{
+			"name": "v3_devices",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"object\"] = responseBody.has(\"device\");",
+							"",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.us-east-1.mbedcloud.com/v3/devices",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer ak_1MDE1ODk1YjIyMzJiMDI0MjBhMDExZTAzMDAwMDAwMDA015de776fc2302420a01450d00000000VE4bVF3BPkOACLWdGKKcts9aAeFoqmcg",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "account",
+							"value": "/",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "birtest",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "1Biscuit2014,",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": "Intergration Lab API --> with Team name "
+			},
+			"response": []
+		},
+		{
+			"name": "v3_device-queries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.us-east-1.mbedcloud.com/v3/device-queries",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer ak_1MDE1ODk1YjIyMzJiMDI0MjBhMDExZTAzMDAwMDAwMDA015de776fc2302420a01450d00000000VE4bVF3BPkOACLWdGKKcts9aAeFoqmcg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
