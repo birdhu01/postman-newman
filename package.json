@@ -4,7 +4,7 @@
   "description": "projet for storing postman test",
   
 "scripts": {
-    "api-tests-production": "newman run testgetresponse.json"
+    "api-tests-production": "newman run device_directory_get_api.json"
   },
   "author": "bir",
   "dependencies": {
